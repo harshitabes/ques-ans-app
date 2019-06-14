@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Ques-Ans App</title>
+
+
+<body>
+
+<h2><a href="{% url 'Signup' %}">SignUp</a></h2>
+<div class="head">
+    {% if user.is_authenticated %}
+  Hi {{ user.username }}!
+    <p ><a href="{% url 'logoutview' %}">logout</a></p>
+         <p align="center"><a href="{% url 'quiz' %}">Questions</a></p>
+{% else %}
+
+        <h2 ><p>Please login to View Questions </p></h2>
+<h1>Login Form</h1>
+</div>
+
+
+
+	<div class="forms">
+	<form method="POST" action="{% url 'loginview' %}" target="_self" >
+        {% csrf_token %}
+	username:
+	<input type="text" name="username" >
+	<br>
+	<br>
+	password:
+        <input type="password" name="password" >
+        <br>
+        <br>
+
+
+
+	<input type="submit" value="Sign In" >
+	</form>
+	</div>
+{% endif %}
+</body>
+</head>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ques-Ans App</title>
+
+
+<body>
+<h1>
+Hi {{ user.username }}!
+ <p align="right"><a href="{% url 'logoutview' %}">logout</a></p>
+
+    Questions :
+</h1>
+{% csrf_token %}
+<h3> {% for i in data %}
+    <br>
+    <h3>{{ i.ques_statement}}</h3>
+
+
+    <a href="/submit/{{ i.pk }}/" class="btn btn-primary" role="button"><h3>Answer</h3></a>
+    {% endfor %}
+
+</h3>
+
+
+</body>
+</head>
+</html>

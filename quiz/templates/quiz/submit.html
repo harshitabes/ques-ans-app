@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ Submit }}</title>
+
+</head>
+<body>
+{% comment %}{{ data }}{% endcomment %}
+<form method="post" action="{{ data }}"  target="_blank">
+    {% csrf_token %}
+    <h1> Answer:</h1>
+
+    <textarea name="answer" rows="30" cols="100">write your answer here</textarea><br>
+
+
+
+<br>
+
+
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
